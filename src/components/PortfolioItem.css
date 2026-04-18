@@ -1,0 +1,103 @@
+.p-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1.6rem;
+  align-items: center;
+  padding: 1.3rem 1.4rem;
+  background: var(--paper-pure);
+  border: 1px solid var(--paper-edge);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--t-fast);
+}
+
+.p-item:hover { border-color: var(--gold-soft); }
+
+.p-item-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.p-item-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  transition: color var(--t-fast);
+}
+.p-item-name:hover { color: var(--gold-deep); }
+
+.p-item-meta {
+  font-size: 0.74rem;
+  color: var(--ink-mute);
+  text-transform: capitalize;
+}
+
+.p-item-alloc { display: flex; flex-direction: column; gap: 0.3rem; min-width: 170px; }
+
+.alloc-display {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-align: left;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.edit-hint {
+  font-size: 0.62rem;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.alloc-edit { display: flex; gap: 0.5rem; }
+
+.alloc-input {
+  width: 130px;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--paper-edge);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 0.9rem;
+}
+
+.alloc-save {
+  padding: 0.45rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper-pure);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+}
+
+.alloc-err {
+  color: var(--risk-high);
+  font-size: 0.72rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  max-width: 200px;
+}
+
+.p-item-remove {
+  width: 32px;
+  height: 32px;
+  font-size: 1.4rem;
+  color: var(--ink-mute);
+  border-radius: 50%;
+  transition: all var(--t-fast);
+}
+.p-item-remove:hover {
+  background: var(--risk-high-bg);
+  color: var(--risk-high);
+}
+
+@media (max-width: 720px) {
+  .p-item { grid-template-columns: 1fr; gap: 0.9rem; }
+}

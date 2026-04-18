@@ -1,0 +1,67 @@
+.rec-page { padding: 3rem 2rem 5rem; }
+
+.rec-head {
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.rec-head h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.rec-sub {
+  color: var(--ink-mute);
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.rec-sub strong { color: var(--ink); }
+
+.rec-edit {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--gold-deep);
+  border-bottom: 1px solid var(--gold-deep);
+  text-transform: lowercase;
+}
+
+.rec-meta {
+  font-size: 0.9rem;
+  color: var(--ink-mute);
+  margin-bottom: 2rem;
+}
+
+.rec-count {
+  font-size: 1.6rem;
+  color: var(--gold-deep);
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+.rec-no-profile {
+  max-width: 460px;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--paper-pure);
+  border: 1px dashed var(--paper-edge);
+  border-radius: var(--radius-lg);
+}
+
+.rec-no-profile h3 {
+  font-family: var(--font-display);
+  margin-bottom: 0.6rem;
+}
+
+.rec-no-profile p {
+  color: var(--ink-mute);
+  margin-bottom: 1.8rem;
+}
+
+@media (max-width: 960px) {
+  .rec-head h1 { font-size: 2.4rem; }
+}

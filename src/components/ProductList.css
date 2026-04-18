@@ -1,0 +1,23 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.4rem;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--paper-pure);
+  border: 1px dashed var(--paper-edge);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--ink-mute);
+  margin: 0;
+}

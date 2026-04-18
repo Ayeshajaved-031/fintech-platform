@@ -1,0 +1,228 @@
+/* ============================================================
+   MERIDIAN — Global Styles
+   Vibrant FinTech aesthetic: teal + coral + clean whites
+   ============================================================ */
+
+:root {
+  /* Core palette */
+  --ink: #1a1d2e;           /* dark charcoal-navy */
+  --ink-soft: #2d3148;
+  --ink-mute: #6b7086;
+  --paper: #f7f8fc;         /* cool white */
+  --paper-pure: #ffffff;
+  --paper-edge: #e2e4ee;
+  --gold: #00b894;          /* vibrant teal — primary accent */
+  --gold-deep: #00997a;
+  --gold-soft: #b8f0e0;
+
+  /* Secondary accent — coral for CTAs & highlights */
+  --coral: #ff6b6b;
+  --coral-deep: #e05555;
+  --coral-soft: #ffe0e0;
+
+  /* Risk semantics — brighter, more distinct */
+  --risk-low: #00b894;
+  --risk-low-bg: #dbf5ee;
+  --risk-med: #fdcb6e;
+  --risk-med-bg: #fef5e0;
+  --risk-high: #ff6b6b;
+  --risk-high-bg: #ffe0e0;
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter Tight', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Scale */
+  --radius: 8px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(26, 29, 46, 0.06);
+  --shadow: 0 4px 12px rgba(26, 29, 46, 0.08);
+  --shadow-lg: 0 12px 36px rgba(26, 29, 46, 0.12);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 180ms var(--ease);
+  --t-med: 340ms var(--ease);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at top left, rgba(0, 184, 148, 0.06), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(255, 107, 107, 0.04), transparent 60%);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+h3 { font-size: 1.4rem; font-weight: 600; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* ============================================================
+   Layout helpers
+   ============================================================ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+
+.rule {
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.12;
+  border: 0;
+  margin: 2rem 0;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--t-fast);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: var(--gold-deep);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 184, 148, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--paper-edge);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.btn-gold {
+  background: var(--coral);
+  color: #ffffff;
+}
+.btn-gold:hover {
+  background: var(--coral-deep);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.35);
+}
+
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   Page transitions
+   ============================================================ */
+.page-enter {
+  animation: fadeRise 480ms var(--ease) both;
+}
+
+@keyframes fadeRise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* stagger helper */
+.stagger > * { animation: fadeRise 500ms var(--ease) both; }
+.stagger > *:nth-child(1) { animation-delay: 40ms; }
+.stagger > *:nth-child(2) { animation-delay: 90ms; }
+.stagger > *:nth-child(3) { animation-delay: 140ms; }
+.stagger > *:nth-child(4) { animation-delay: 190ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+.stagger > *:nth-child(6) { animation-delay: 290ms; }
+.stagger > *:nth-child(7) { animation-delay: 340ms; }
+.stagger > *:nth-child(8) { animation-delay: 390ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .container { padding: 0 1.2rem; }
+  html, body { font-size: 15px; }
+}

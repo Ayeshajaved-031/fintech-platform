@@ -1,0 +1,126 @@
+.profile-page { padding: 3rem 2rem 5rem; }
+
+.profile-head {
+  margin-bottom: 2.5rem;
+  max-width: 640px;
+}
+
+.profile-head h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.profile-sub {
+  color: var(--ink-mute);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.profile-aside {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.profile-summary-card,
+.profile-empty-card {
+  background: var(--paper-pure);
+  border: 1px solid var(--paper-edge);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+}
+
+.profile-summary-card .eyebrow { display: block; margin-bottom: 1rem; }
+
+.profile-dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profile-dl > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--paper-edge);
+}
+
+.profile-dl dt {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+
+.profile-dl dd {
+  margin: 0;
+  color: var(--ink);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+.match-card {
+  background: linear-gradient(135deg, var(--ink), #2d3148);
+  color: var(--paper-pure);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.match-count {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.match-label {
+  font-size: 0.88rem;
+  color: var(--gold-soft);
+  margin-bottom: 1rem;
+}
+
+.match-btn { width: 100%; justify-content: center; }
+
+.profile-empty-card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.profile-empty-card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.profile-empty-card p {
+  color: var(--ink-mute);
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-aside { position: static; }
+  .profile-head h1 { font-size: 2.4rem; }
+}
